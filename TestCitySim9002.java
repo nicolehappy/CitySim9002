@@ -16,40 +16,34 @@ public class TestCitySim9002 {
 	public void tearDown() throws Exception {
 	}
 	
-	//----------------------------------
-	// VALID INTEGER TEST - 0
-	//----------------------------------
-	//Return true if it is a valid integer
+	/**
+	 * VALID INTEGER TEST
+	 * 0 -- test valid input 
+	*/
 	@Test
 	public void testIsInteger0() {
-		String[] testArray = {"8"};
+		String[] testArray = {"5"};
 		assertTrue(CitySim9002.isInteger(testArray));
 	}
-
 	
-	// VALID INTEGER TEST - 1
-	//Return false if the input has 0 integer
+	/**
+	 * VALID INTEGER TEST
+	 * 1 -- test no input 
+	*/
 	@Test
 	public void testIsInteger1() {
 		String[] testArray = {};
 		assertFalse(CitySim9002.isInteger(testArray));
 	}
-	
-	// VALID INTEGER TEST - 2
-	// Return false if the input has more than one integer 
+
+	/**
+	 * VALID INTEGER TEST
+	 * 2 -- test string input 
+	*/
 	@Test
 	public void testIsInteger2() {
-		
-		String[] testArray = {"7", "2"};
-		assertFalse(CitySim9002.isInteger(testArray));
-	}
-	
-	// VALID INTEGER TEST - 3
-	// Return false if the input is not integer
-	@Test
-	public void testIsInteger3() {
 			
-		String[] testArray = {"NotInteger"};
+		String[] testArray = {"hihihi"};
 		assertFalse(CitySim9002.isInteger(testArray));
 	}
 	
