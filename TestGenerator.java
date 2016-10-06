@@ -5,12 +5,11 @@ import org.junit.Test;
 
 public class TestGenerator {
 	
-	private Generator generator = new Generator(9, 5);
+	private Generator generator = new Generator(3, 5);
 	
 	/**
-	 * The random number should smaller than bound
-	 * Input seed 9 and bound 6
-	 * The generated number should no less than 0 and larger than 6
+	 * Set seed to 3 and bound to 6
+	 * The generated number should in the bound
 	 */
 	@Test
 	public void testRandomGenerator() {
@@ -18,13 +17,11 @@ public class TestGenerator {
 	}
 	
 	/**
-	 * Five index for visitors should be different
-	 * Since they are generated randomly
-	 * Rerun the method to produce an int array
-	 * Elements in the array should be different
+	 * Generated number should be different
+	 * Rerun an array
 	 */
 	@Test
-	public void testRandomGenerateVisitor0() {
+	public void testRandomNumber() {
 		int[] tested = generator.randomGenerateVisitor();
 		boolean allEqual = true;
 		
