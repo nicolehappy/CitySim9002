@@ -34,7 +34,7 @@ public class TestVisitors {
 	 * Five visitors should be the same 
 	 */
 	@Test
-	public void testNextVisitor0() {
+	public void testNextVisitor() {
 		
 		Generator mockGenerator = Mockito.mock(Generator.class);
 		//stub the randomGenerator() method
@@ -55,45 +55,34 @@ public class TestVisitors {
 		assertTrue(areEqual);
 	}
 	
-	/**
-	 * Using real random and visitor class
-	 * generator classes will be called five times
-	 * accordingly five integers should be generated
-	 * Generated Visitors shouldn't be the same 
-	 */
-	@Test
-	public void testNextVisitor1() {
-		
-		Generator generator = new Generator(9, 4);
-		
-		Visitors visitors = new Visitors();
-		String visitorList[] = new String[5];
-		
-		for(int i=0; i<5; i++) {
-			visitorList[i] = visitors.nextVisitor(generator);
-		}
-		
-		boolean areEqual = true;
-		for(int i=0; i<5; i++) {
-			if(visitorList[i] != visitorList[0]) areEqual = false;
-		}
-		
-		assertTrue(areEqual);
-	}
 	
 	
-	/**A Blogger shall dislike all locations.
+	/**A Blogger should dislike all locations.
 	 * Given the visitor to be Blogger
 	 * Given the location to be Squirrel Hill
 	 * The likeLocation function should return false
 	*/
 	@Test
-	public void testLikeLocation() {
+	public void testLikeLocation0() {
 		
 		String visitor = "Blogger";
 		String location = "Squirrel Hill";
 		
 		assertFalse(visitors.likeLocation(visitor, location));
+	}
+	
+	/**A Student should like Squirrel Hill.
+	 * Given the visitor to be Student
+	 * Given the location to be Squirrel Hill
+	 * The likeLocation function should return false
+	*/
+	@Test
+	public void testLikeLocation1() {
+		
+		String visitor = "Student";
+		String location = "Squirrel Hill";
+		
+		assertTrue(visitors.likeLocation(visitor, location));
 	}
 	
 	
